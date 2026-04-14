@@ -1,0 +1,396 @@
+
+*{
+    font-family: Iosevka Charon Mono ;
+}
+p,h1,h2
+{
+    margin: 0;
+}
+body{
+    margin: 0;
+    min-height: 150vh;
+    min-width: 100vh;
+   
+}
+
+.enable-transition-body body {
+    transition: background-color .4s ease-out,
+                color .4s ease-out;
+}
+.enable-transition-header .header-container
+{
+    transition: background-color .4s ease-out,
+                color .4s ease-out;
+
+}
+
+.header-container
+{
+   width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 0 7px 15px rgb(46, 45, 45);
+   
+}
+.add-note-button-header
+{
+  
+    border:none;
+    height: 50px;
+     font-size: clamp(14px, 2vw, 20px);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 10px rgb(131, 125, 125);
+    cursor: pointer;
+    transition: .2s;
+}
+.add-note-button-header:hover
+{
+    scale: 1.1;
+    opacity: 0.8;
+    background-color: rgb(28, 124, 202);
+    color:white;
+    border: 2px solid rgb(28, 124, 202);
+}
+.header-buttons-container
+{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.dark-light-button-style
+{
+    height: 50px;
+    font-size: clamp(14px, 2vw, 20px);
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgb(131, 125, 125);
+    transition: .2s;
+    margin-right: 20px;
+
+
+}
+.dark-light-button-style:hover
+{
+    scale: 1.2;
+    opacity: 0.8;
+    color: white;
+    background-color: black;
+    outline: 1.5px solid black;
+}
+.dark-background-button 
+body
+{
+    background-color: rgb(9, 9, 9);
+    color: white;
+}
+
+.light-background-button body
+{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.dark-background-header 
+{
+     background-color: rgb(21, 21, 21);
+
+}
+.light-background-header 
+{
+    background-color: rgb(226, 226, 220);
+     box-shadow: 0 7px 15px rgb(193, 184, 184);
+}
+
+
+
+.dialog-style
+{
+    border:none;
+    width: 100%;
+    max-width: 500px;
+   
+    min-height: 300px;
+    font-size: 30px;
+    border-radius: 10px;
+
+    background-color: #676b7c;
+    box-sizing: border-box;
+}
+#note-background-color-picker {
+    width: 40px;
+}
+.note-title-style
+{
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius:5px;
+    border: none;
+    box-sizing: border-box;
+
+}
+.note-description-style
+{
+    outline: none;
+    text-indent: 0;
+    line-height: 1.4;
+    font-size: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: 180px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius:5px;
+    border: none;
+    resize: none;
+
+}
+
+.description-title-input-container,.title-title-input-container
+{
+   width: 100%;
+   box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.grid-notes
+{
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 10px;
+    row-gap: 20px;
+}
+.note-container-grid
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+    padding-left:10px ;
+    width: 95%;
+    height: 300px;
+   box-shadow: 3px 2px 10px rgb(108, 112, 108);
+    
+}
+@media (max-width:1200px)
+{
+    .grid-notes
+    {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (max-width:900px)
+{
+   
+   
+    .grid-notes
+    {
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    
+  
+}
+@media (max-width:630px)
+{
+    .header-container 
+    {
+        width: 100%;
+    }
+    body
+    {
+        min-width: 70vh;
+    }
+    .grid-notes
+    {
+        grid-template-columns:1fr; 
+    }
+  
+
+    .note-container-grid
+    {
+        width: 90%;
+        margin-left: 19px;
+    }
+}
+@media (max-height:600px)
+{
+  .dialog-style
+    {
+        height: 100%;
+        width: 100%;
+        font-size: clamp(20px,28px,30px);
+        
+
+    }
+}
+@media (max-height:580px)
+{
+  .dialog-style
+    {
+        height: 90vh;
+        font-size: clamp(20px,28px,30px);
+        
+
+    }
+    .title-title-input-container
+    {
+        height: 25vh;
+    }
+    .description-title-input-container
+    {
+       min-height: 40vh;
+    }
+    .add-cancel-confirm-container
+    {
+        height: 20vh;
+    }
+}
+
+
+
+
+
+.text-note-container
+{
+    width: 100%;
+    min-width: 0;
+    height: 250px;
+    overflow: auto;
+}
+.note-buttons-container
+{
+    width: 100%;
+     min-width: 0;
+    height: 60px;
+    box-sizing: border-box;
+}
+.delete-note-button-style
+{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 60px;
+    height:25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(183, 96, 96);
+    transition: .2s;
+}
+.delete-note-button-style:hover
+{
+    opacity: 0.8;
+    color:rgb(183, 96, 96); 
+    background-color: inherit;
+    border: 1.5px solid rgb(183, 96, 96); 
+}
+.toggle-display{
+
+    display: none;
+}
+.add-note-confirm-button-style
+{
+
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(147, 206, 107, 0.51);
+    transition: .2s;
+}
+.cancel-note-button-style
+{
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(156, 38, 38);
+    transition: .2s;
+}
+.add-note-confirm-button-style:hover
+{
+    scale: 1.1;
+    opacity: 0.8;
+    background-color: #676b7c;
+    color: rgba(147, 206, 107, 0.51);;
+    border: 1.5px solid black;
+}
+.cancel-note-button-style:hover
+{
+    scale: 1.1;
+    opacity: 0.8;
+    color: rgb(156, 38, 38);
+    background-color: #676b7c;
+    border: 1.5px solid black;
+}
+.edit-note-button-style
+{
+
+    position: absolute;
+    bottom: 5%;
+    right: 28%;
+    width: 60px;
+    height:25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(127, 183, 96);
+    transition: .2s;
+}
+.edit-note-button-style:hover
+{
+     opacity: 0.8;
+    color:rgb(24, 159, 74);
+    background-color: inherit;
+    border: 1.5px solid rgb(24, 159, 74);
+}
+.note-timestamp-container
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    bottom: 3%;
+    left: 0;
+    width: 100px;
+    height: 45px;
+    border-style: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(132, 146, 156);
+}
+.note-timestamp
+{
+   
+    font-weight: bold;
+    width: 75px;
+    font-size: 12px;
+    bottom: 2%;
+
+    
+}
+.red-outline-input
+{
+    outline:2px solid rgb(174, 59, 59);
+}
